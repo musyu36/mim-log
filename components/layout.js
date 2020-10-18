@@ -54,7 +54,7 @@ export default function Layout({ children, home }) {
                         </>
                     )}
             </header>
-            <main>{children} ここがチルドレン</main>
+            <main>{children}</main>
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
