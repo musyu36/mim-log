@@ -6,7 +6,7 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts")
 
-export function getSortedPostsData() {
+export function getSortedPostsData() { 
     // /posts 配下のファイル名を取得
     const fileNames = fs.readdirSync(postsDirectory)
     const allPostsData = fileNames.map(fileName => {
@@ -23,7 +23,7 @@ export function getSortedPostsData() {
         // データをidと合わせる
         return {
             id,
-            ...matterResult.data
+          ...matterResult.data as { date: string; title: string}
         }
 
     })
@@ -65,7 +65,7 @@ export function getAllPostIds() {
 }
 
 // id を元に投稿をレンダーするのに必要なデータをフェッチする関数
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -81,6 +81,6 @@ export async function getPostData(id) {
     return {
         id,
         contentHtml,
-        ...matterResult.data
+      ...matterResult.data as { date: string; title:string}
     }
 }
