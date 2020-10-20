@@ -43,8 +43,13 @@ export default function Layout({ children, home, category }: { children: React.R
                         {categories.map(( category ) => (
                             <li className={styles.categoryLi} key={category}>
                                 <Link href={`/categories/${category}`}>
-                                    <a>{category}</a>
+                                    <a>
+                                        <img className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />  
+                                    </a>
                                 </Link>
+                                <p className={styles.categoryText}>
+                                    {category}
+                                </p>
                             </li>
                         ))}
                     </ul>
