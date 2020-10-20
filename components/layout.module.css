@@ -20,6 +20,16 @@
   height: 8rem;
 }
 
+.categoryUl {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.categoryLi {
+  margin-right: 16px;
+}
+
 .backToHome {
   margin: 3rem 0 0;
 }
