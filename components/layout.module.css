@@ -4,6 +4,16 @@
   margin: 0 auto;
 }
 
+.headerAnchor {
+  width: 125px;
+  height: 45px;
+}
+
+.headerLogo {
+  width: 125px;
+  height: 45px;
+}
+
 .header {
   padding: 16px 0;
   height: auto;
@@ -38,6 +48,11 @@
   margin-right: 24px;
 }
 
+.categoryAnchor {
+  width: 64px;
+  height: 64px;
+}
+
 .categoryIcon {
   width: 64px;
   height: 64px;
@@ -49,7 +64,7 @@
   transition: 0.6s;
 }
 
-.categoryText {
+.navCategoryText {
   margin: 8px auto 0;
   color: #102137;
 }

@@ -29,15 +29,16 @@ export default function Layout({ children, home, category }: { children: React.R
             <header className={styles.header}>
                 <div className={styles.container}>
                     <Link href={`/`}>
-                        <a>
-                            <h1 className={utilStyles.heading2Xl}>
+                        <h1 className={styles.headerLogo}>
+                            <a className={styles.headerAnchor}>
                                 <img
+                                    width="125px" height="45px" 
                                     src="/images/logo.jpg"
                                     className={`${styles.headerImage}`}
                                     alt={name}
                                 />
-                            </h1>
-                        </a>
+                            </a>
+                        </h1>
                     </Link>
 
                 </div>
@@ -48,11 +49,11 @@ export default function Layout({ children, home, category }: { children: React.R
                         {categories.map(( category ) => (
                             <li className={styles.categoryLi} key={category}>
                                 <Link href={`/categories/${category}`}>
-                                    <a>
-                                        <img className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />  
+                                    <a className={styles.categoryAnchor}>
+                                        <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />  
                                     </a>
                                 </Link>
-                                <p className={styles.categoryText}>
+                                <p className={styles.navCategoryText}>
                                     {category}
                                 </p>
                             </li>
