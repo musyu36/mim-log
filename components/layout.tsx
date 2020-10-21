@@ -28,13 +28,18 @@ export default function Layout({ children, home, category }: { children: React.R
             </Head>
             <header className={styles.header}>
                 <div className={styles.container}>
-                    <h1 className={utilStyles.heading2Xl}>
-                        <img
-                            src="/images/logo.jpg"
-                            className={`${styles.headerImage}`}
-                            alt={name}
-                        />
-                    </h1>
+                    <Link href={`/`}>
+                        <a>
+                            <h1 className={utilStyles.heading2Xl}>
+                                <img
+                                    src="/images/logo.jpg"
+                                    className={`${styles.headerImage}`}
+                                    alt={name}
+                                />
+                            </h1>
+                        </a>
+                    </Link>
+
                 </div>
             </header>
             <nav className={styles.categoryNav}>
