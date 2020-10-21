@@ -8,7 +8,30 @@ const name = 'Mim'
 export const siteTitle = "mimlog"
 const categories = ["Dev", "Diary", "Gadget"]
 
-export default function Layout({ children, home, category }: { children: React.ReactNode, home?: boolean, category?: string }) {
+export default function Layout({ children, post, category }: { children: React.ReactNode, post?: boolean, category?: string }) {
+    var categoryNav;
+    if (!post) {
+        categoryNav =
+            <nav className={styles.categoryNav}>
+                <div className={styles.container}>
+                    <ul className={styles.categoryUl}>
+                        {categories.map((category) => (
+                            <li className={styles.categoryLi} key={category}>
+                                <Link href={`/categories/${category}`}>
+                                    <a className={styles.categoryAnchor}>
+                                        <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />
+                                    </a>
+                                </Link>
+                                <p className={styles.navCategoryText}>
+                                    {category}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </nav>;
+    }
+
     return (
         <>
             <Head>
@@ -43,7 +66,8 @@ export default function Layout({ children, home, category }: { children: React.R
 
                 </div>
             </header>
-            <nav className={styles.categoryNav}>
+            {categoryNav}
+            {/* <nav className={styles.categoryNav}>
                 <div className={styles.container}>
                     <ul className={styles.categoryUl}>
                         {categories.map(( category ) => (
@@ -60,7 +84,7 @@ export default function Layout({ children, home, category }: { children: React.R
                         ))}
                     </ul>
                 </div>
-            </nav>
+            </nav> */}
             <div className={styles.container}>
                 <main>{children}</main>
             </div>
