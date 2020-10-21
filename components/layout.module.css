@@ -12,6 +12,8 @@
 .headerLogo {
   width: 125px;
   height: 45px;
+  margin: 0;
+  cursor: pointer;
 }
 
 .header {
