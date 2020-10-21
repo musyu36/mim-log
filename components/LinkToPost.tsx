@@ -1,10 +1,8 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from "../lib/posts"
+import linkToPost from './LinkToPost.module.css'
 import Link from "next/link"
 import Date from "../components/date"
-import { GetStaticProps } from 'next' 
+import "./LinkToPost.module.css";
 
 export default function LinkToPost({
     id,
@@ -17,20 +15,24 @@ export default function LinkToPost({
       title:string,
       id:string
     }
-  ) {
+) {
+
   return (    
-        <li className={utilStyles.listItem} key={id}>
+        <li className={`${utilStyles.listItem} ${utilStyles.convex}`} key={id}>
             <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className={utilStyles.listAnchor}>{title}
+                    <br />
+                    <small className={utilStyles.lightText}>
+                        <Date dateString={date} />
+                    </small>
+                  <br />
+                  <Link href={`/categories/${category}`}>
+                    <small className={`${utilStyles.lightText} ${linkToPost.linkCategoryText}`}>
+                        {category}
+                    </small>
+                  </ Link>
+                </a>
             </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-            </small>
-            <br />
-            <small className={utilStyles.lightText}>
-                {category}
-            </small>
         </li>
   )
 }
