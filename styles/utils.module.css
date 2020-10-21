@@ -54,6 +54,11 @@
   color: #999;
 }
 
+.flexCenter {
+  display: flex;
+  justify-content: center;
+}
+
 .convex {
   border-radius: 16px;
   box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #cacfd4;

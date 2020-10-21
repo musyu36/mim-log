@@ -58,6 +58,11 @@ export default function Layout({ children, home, category }: { children: React.R
             <div className={styles.container}>
                 <main>{children}</main>
             </div>
+            <footer className={styles.footer}>
+                <div className={styles.container}>
+                    <small className={`${utilStyles.lightText} ${utilStyles.flexCenter}`}>Copyright (c) mimlog All Rights Reserved.</small>
+                </div>
+            </footer>
         </>
     );
 }
