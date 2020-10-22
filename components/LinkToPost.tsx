@@ -19,18 +19,16 @@ export default function LinkToPost({
 
   return (    
         <li className={`${utilStyles.listItem} ${utilStyles.convex}`} key={id}>
-            <Link href={`/posts/${id}`}>
+            <Link href={`/posts/${id}`} as={`/posts/${id}`}>
                 <a className={utilStyles.listAnchor}>{title}
                     <br />
                     <small className={utilStyles.lightText}>
                         <Date dateString={date} />
                     </small>
                   <br />
-                  <Link href={`/categories/${category}`}>
-                    <small className={`${utilStyles.lightText} ${linkToPost.linkCategoryText}`}>
-                        {category}
-                    </small>
-                  </ Link>
+                  <small className={`${utilStyles.lightText} ${linkToPost.linkCategoryText}`}>
+                      {category}
+                  </small>
                 </a>
             </Link>
         </li>

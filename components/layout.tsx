@@ -21,7 +21,7 @@ export default function Layout({ children, post, home, category }: { children: R
     } else {
         homeIcon =
             <li className={styles.categoryLi} >
-                <Link href={`/`}>
+                <Link href="/" as="/">
                     <a className={styles.categoryAnchor}>
                         <img width="64px" height="64px" className={styles.categoryIcon} src="/images/Home.png" alt="" />
                     </a>
@@ -87,7 +87,7 @@ export default function Layout({ children, post, home, category }: { children: R
             </Head>
             <header className={styles.header}>
                 <div className={styles.container}>
-                    <Link href={`/`}>
+                    <Link href="/" as="/">
                         <h1 className={styles.headerLogo}>
                             <a className={styles.headerAnchor}>
                                 <img
