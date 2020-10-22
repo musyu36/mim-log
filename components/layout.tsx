@@ -15,18 +15,31 @@ export default function Layout({ children, post, category }: { children: React.R
             <nav className={styles.categoryNav}>
                 <div className={styles.container}>
                     <ul className={styles.categoryUl}>
-                        {categories.map((category) => (
-                            <li className={styles.categoryLi} key={category}>
-                                <Link href={`/categories/${category}`}>
-                                    <a className={styles.categoryAnchor}>
-                                        <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />
-                                    </a>
-                                </Link>
-                                <p className={styles.navCategoryText}>
-                                    {category}
-                                </p>
-                            </li>
-                        ))}
+                    {categories.map((categoryName) => {
+                        if (categoryName === category) {
+                            return (
+                                <li className={styles.categoryLi} key={categoryName}>
+                                            <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    <p className={styles.navCategoryText}>
+                                        {categoryName}
+                                    </p>
+                                </li>
+                            );
+                        } else {
+                            return (
+                                <li className={styles.categoryLi} key={categoryName}>
+                                    <Link href={`/categories/${categoryName}`}>
+                                        <a className={styles.categoryAnchor}>
+                                            <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
+                                        </a>
+                                    </Link>
+                                    <p className={styles.navCategoryText}>
+                                        {categoryName}
+                                    </p>
+                                </li>
+                            );
+                        }
+                        })}
                     </ul>
                 </div>
             </nav>;
@@ -67,24 +80,6 @@ export default function Layout({ children, post, category }: { children: React.R
                 </div>
             </header>
             {categoryNav}
-            {/* <nav className={styles.categoryNav}>
-                <div className={styles.container}>
-                    <ul className={styles.categoryUl}>
-                        {categories.map(( category ) => (
-                            <li className={styles.categoryLi} key={category}>
-                                <Link href={`/categories/${category}`}>
-                                    <a className={styles.categoryAnchor}>
-                                        <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${category}.png`} alt="" />  
-                                    </a>
-                                </Link>
-                                <p className={styles.navCategoryText}>
-                                    {category}
-                                </p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </nav> */}
             <div className={styles.container}>
                 <main>{children}</main>
             </div>
