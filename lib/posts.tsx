@@ -6,7 +6,7 @@ import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts")
 
-const categories = ["Dev", "Diary", "Gadget"]
+const categories = ["Dev", "Diary", "Other"]
 
 export function getSortedPostsData() { 
     // /posts 配下のファイル名を取得

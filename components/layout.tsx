@@ -6,15 +6,38 @@ import Link from "next/link"
 
 const name = 'Mim'
 export const siteTitle = "mimlog"
-const categories = ["Dev", "Diary", "Gadget"]
+const categories = ["Dev", "Diary", "Other"]
 
-export default function Layout({ children, post, category }: { children: React.ReactNode, post?: boolean, category?: string }) {
+export default function Layout({ children, post, home, category }: { children: React.ReactNode, post?: boolean, home?: boolean, category?: string }) {
+    var homeIcon;
+    if (home) {
+        homeIcon =
+            <li className={styles.categoryLi}>
+                        <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                <p className={styles.navCategoryText}>
+                    Home
+                </p>
+            </li>
+    } else {
+        homeIcon =
+            <li className={styles.categoryLi} >
+                <Link href={`/`}>
+                    <a className={styles.categoryAnchor}>
+                        <img width="64px" height="64px" className={styles.categoryIcon} src="/images/Home.png" alt="" />
+                    </a>
+                </Link>
+                <p className={styles.navCategoryText}>
+                    Home
+                </p>
+            </li>
+    }
     var categoryNav;
     if (!post) {
         categoryNav =
             <nav className={styles.categoryNav}>
                 <div className={styles.container}>
-                    <ul className={styles.categoryUl}>
+                <ul className={styles.categoryUl}>
+                    {homeIcon}
                     {categories.map((categoryName) => {
                         if (categoryName === category) {
                             return (
