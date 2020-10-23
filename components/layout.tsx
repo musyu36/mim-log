@@ -2,14 +2,74 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Link from "next/link"
 
 const name = 'Mim'
-export const siteTitle = "Mim Log"
+export const siteTitle = "mimlog"
+const categories = ["Dev", "Diary", "Other"]
 
-export default function Layout({ children, home }: { children: React.ReactNode, home?: boolean}) {
+export default function Layout({ children, post, home, category }: { children: React.ReactNode, post?: boolean, home?: boolean, category?: string }) {
+    var homeIcon;
+    if (home) {
+        homeIcon =
+            <li className={styles.categoryLi}>
+                        <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                <p className={styles.navCategoryText}>
+                    Home
+                </p>
+            </li>
+    } else {
+        homeIcon =
+            <li className={styles.categoryLi} >
+                <Link href="/" as="/">
+                    <a className={styles.categoryAnchor}>
+                        <img width="64px" height="64px" className={styles.categoryIcon} src="/images/Home.png" alt="" />
+                    </a>
+                </Link>
+                <p className={styles.navCategoryText}>
+                    Home
+                </p>
+            </li>
+    }
+    var categoryNav;
+    if (!post) {
+        categoryNav =
+            <nav className={styles.categoryNav}>
+                <div className={styles.container}>
+                <ul className={styles.categoryUl}>
+                    {homeIcon}
+                    {categories.map((categoryName) => {
+                        if (categoryName === category) {
+                            return (
+                                <li className={styles.categoryLi} key={categoryName}>
+                                            <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    <p className={styles.navCategoryText}>
+                                        {categoryName}
+                                    </p>
+                                </li>
+                            );
+                        } else {
+                            return (
+                                <li className={styles.categoryLi} key={categoryName}>
+                                    <Link href={`/categories/${categoryName}`}>
+                                        <a className={styles.categoryAnchor}>
+                                            <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
+                                        </a>
+                                    </Link>
+                                    <p className={styles.navCategoryText}>
+                                        {categoryName}
+                                    </p>
+                                </li>
+                            );
+                        }
+                        })}
+                    </ul>
+                </div>
+            </nav>;
+    }
+
     return (
-        <div className={styles.container}>
+        <>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
@@ -26,42 +86,26 @@ export default function Layout({ children, home }: { children: React.ReactNode, 
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
-                {home ? (
-                    <>
-                        <img
-                            src="/images/profile.jpg"
-                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                            alt={name}
-                        />
-                        <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </>
-                ) : (
-                        <>
-                            <Link href="/">
-                                <a>
-                                    <img
-                                        src="/images/profile.jpg"
-                                        className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                                        alt={name}
-                                    />
-                                </a>
-                            </Link>
-                            <h2 className={utilStyles.headingLg}>
-                                <Link href="/">
-                                    <a className={utilStyles.colorInherit}>{name}</a>
-                                </Link>
-                            </h2>
-                        </>
-                    )}
-            </header>
-            <main>{children}</main>
-            {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
+                <div className={styles.container}>
+                    <Link href="/" as="/">
+                        <h1 className={styles.headerLogo}>
+                            <a className={styles.headerAnchor}>
+                                mimlog
+                            </a>
+                        </h1>
                     </Link>
+
                 </div>
-            )}
-        </div>
+            </header>
+            {categoryNav}
+            <div className={styles.container}>
+                <main>{children}</main>
+            </div>
+            <footer className={styles.footer}>
+                <div className={styles.container}>
+                    <small className={`${utilStyles.lightText} ${utilStyles.flexCenter}`}>Copyright (c) mimlog All Rights Reserved.</small>
+                </div>
+            </footer>
+        </>
     );
 }

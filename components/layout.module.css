@@ -1,18 +1,22 @@
 .container {
-  max-width: 36rem;
+  max-width: 48rem;
   padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  margin: 0 auto;
+}
+
+.headerLogo {
+  margin: 0;
+  cursor: pointer;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 8px 0;
+  height: auto;
+  box-shadow: 4px 2px 6px 0px #cacfd4;
 }
 
-.headerImage {
-  width: 6rem;
-  height: 6rem;
+.headerAnchor {
+  color: #102137;
 }
 
 .headerHomeImage {
@@ -20,6 +24,67 @@
   height: 8rem;
 }
 
+.categoryNav {
+  box-shadow: inset -4px -2px 4px 0px #ffffff;
+}
+
+.categoryUl {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 16px 0 12px;
+}
+
+.categoryLi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.categoryAnchor {
+  width: 64px;
+  height: 64px;
+}
+
+.categoryIcon {
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #cacfd4;
+  border-radius: 5px;
+  border: 1px solid #f0f3f5;
+  transition: 0.6s;
+}
+
+.categoryIcon:hover {
+  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #cacfd4;
+  border: 1px solid #366fba85;
+  transform: translateY(2px);
+  transition: 0.3s;
+}
+
+.categoryIconActive {
+  width: 64px;
+  height: 64px;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: inset -4px -2px 4px 0px #ffffff, inset 4px 2px 6px 0px #cacfd4;
+  border-radius: 5px;
+  border: 1px solid #f0f3f5;
+  transform: translateY(2px);
+}
+
+.navCategoryText {
+  margin: 8px auto 0;
+  color: #102137;
+}
+
 .backToHome {
   margin: 3rem 0 0;
+}
+
+.footer {
+  margin: 96px auto 32px;
 }
