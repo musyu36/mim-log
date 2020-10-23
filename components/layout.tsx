@@ -90,12 +90,7 @@ export default function Layout({ children, post, home, category }: { children: R
                     <Link href="/" as="/">
                         <h1 className={styles.headerLogo}>
                             <a className={styles.headerAnchor}>
-                                <img
-                                    width="125px" height="45px" 
-                                    src="/images/logo.jpg"
-                                    className={`${styles.headerImage}`}
-                                    alt={name}
-                                />
+                                mimlog
                             </a>
                         </h1>
                     </Link>
