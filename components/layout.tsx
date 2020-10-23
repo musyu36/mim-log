@@ -12,7 +12,9 @@ export default function Layout({ children, post, home, category }: { children: R
     if (home) {
         homeIcon =
             <li className={styles.categoryLi}>
-                        <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                <p className={styles.categoryActive}>
+                    <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                </p>
                 <p className={styles.navCategoryText}>
                     Home
                 </p>
@@ -41,7 +43,9 @@ export default function Layout({ children, post, home, category }: { children: R
                         if (categoryName === category) {
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
-                                            <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    <p className={styles.categoryActive}>
+                                        <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    </p>
                                     <p className={styles.navCategoryText}>
                                         {categoryName}
                                     </p>
