@@ -4,7 +4,6 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from "next/link"
 
-const name = 'Mim'
 export const siteTitle = "mimlog"
 const categories = ["Dev", "Diary", "Other"]
 
@@ -87,13 +86,13 @@ export default function Layout({ children, post, home, category }: { children: R
             </Head>
             <header className={styles.header}>
                 <div className={styles.container}>
-                    <Link href="/" as="/">
-                        <h1 className={styles.headerLogo}>
+                    <h1 className={styles.headerLogo}>
+                        <Link href="/" as="/">
                             <a className={styles.headerAnchor}>
                                 mimlog
                             </a>
-                        </h1>
-                    </Link>
+                        </Link>
+                    </h1>
 
                 </div>
             </header>
