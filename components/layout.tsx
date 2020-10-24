@@ -22,8 +22,8 @@ export default function Layout({ children, post, home, category }: { children: R
     } else {
         homeIcon =
             <li className={styles.categoryLi} >
-                <Link href="/" as="/">
-                    <a className={styles.categoryAnchor}>
+                <Link href="/" as="/" aria-label="ホームへ">
+                    <a className={styles.categoryAnchor} aria-label="ホームへ">
                         <img className={styles.categoryIcon} src="/images/Home.png" alt="" />
                     </a>
                 </Link>
@@ -54,8 +54,8 @@ export default function Layout({ children, post, home, category }: { children: R
                         } else {
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
-                                    <Link href={`/categories/${categoryName}`}>
-                                        <a className={styles.categoryAnchor}>
+                                    <Link href={`/categories/${categoryName}`} aria-label={`${categoryName}へ`}>
+                                        <a className={styles.categoryAnchor} aria-label={`${categoryName}へ`}>
                                             <img className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
                                         </a>
                                     </Link>
@@ -91,7 +91,7 @@ export default function Layout({ children, post, home, category }: { children: R
             <header className={styles.header}>
                 <div className={styles.container}>
                     <h1 className={styles.headerLogo}>
-                        <Link href="/" as="/">
+                        <Link href="/" as="/" aria-label="ホームへ">
                             <a className={styles.headerAnchor}>
                                 mimlog
                             </a>
