@@ -13,7 +13,7 @@ export default function Layout({ children, post, home, category }: { children: R
         homeIcon =
             <li className={styles.categoryLi}>
                 <p className={styles.categoryActive}>
-                    <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                    <img className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
                 </p>
                 <p className={styles.navCategoryText}>
                     Home
@@ -24,7 +24,7 @@ export default function Layout({ children, post, home, category }: { children: R
             <li className={styles.categoryLi} >
                 <Link href="/" as="/">
                     <a className={styles.categoryAnchor}>
-                        <img width="64px" height="64px" className={styles.categoryIcon} src="/images/Home.png" alt="" />
+                        <img className={styles.categoryIcon} src="/images/Home.png" alt="" />
                     </a>
                 </Link>
                 <p className={styles.navCategoryText}>
@@ -44,7 +44,7 @@ export default function Layout({ children, post, home, category }: { children: R
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <p className={styles.categoryActive}>
-                                        <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                        <img className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
                                     </p>
                                     <p className={styles.navCategoryText}>
                                         {categoryName}
@@ -56,7 +56,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <Link href={`/categories/${categoryName}`}>
                                         <a className={styles.categoryAnchor}>
-                                            <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
+                                            <img className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
                                         </a>
                                     </Link>
                                     <p className={styles.navCategoryText}>
@@ -65,7 +65,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 </li>
                             );
                         }
-                        })}
+                    })}
                     </ul>
                 </div>
             </nav>;
@@ -97,7 +97,6 @@ export default function Layout({ children, post, home, category }: { children: R
                             </a>
                         </Link>
                     </h1>
-
                 </div>
             </header>
             {categoryNav}

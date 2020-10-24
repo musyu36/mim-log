@@ -9,13 +9,19 @@
 }
 
 .header {
-  padding: 8px 0;
+  padding: 4px 0;
   height: auto;
   box-shadow: 4px 2px 6px 0px #cacfd4;
 }
 
 .headerAnchor {
   color: #102137;
+}
+
+@media screen and (max-width: 500px) {
+  .headerLogo {
+    text-align: center;
+  }
 }
 
 .headerHomeImage {
@@ -32,24 +38,27 @@
   list-style: none;
   margin: 0;
   padding: 16px 0 12px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categoryUl::-webkit-scrollbar {
+  display: none;
 }
 
 .categoryLi {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 64px;
   margin-right: 24px;
 }
 
 .categoryAnchor {
-  width: 64px;
-  height: 64px;
+  width: 56px;
 }
 
 .categoryIcon {
-  width: 64px;
-  height: 64px;
   padding: 8px;
   border-radius: 16px;
   box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #cacfd4;
@@ -65,14 +74,14 @@
   transition: 0.3s;
 }
 .categoryActive {
-  width: 64px;
+  width: 56px;
   margin: 0;
 }
 
 .categoryIconActive {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   padding: 8px;
   border-radius: 16px;
   box-shadow: inset -4px -2px 4px 0px #ffffff, inset 4px 2px 6px 0px #cacfd4;
