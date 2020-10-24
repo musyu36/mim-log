@@ -1,5 +1,5 @@
 ---
-title: "Two Forms of Pre-rendering"
+title: "This is dev article"
 date: "2020-01-01"
 category: "Dev"
 ---
