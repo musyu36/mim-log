@@ -4,7 +4,6 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from "next/link"
 
-const name = 'Mim'
 export const siteTitle = "mimlog"
 const categories = ["Dev", "Diary", "Other"]
 
@@ -13,7 +12,9 @@ export default function Layout({ children, post, home, category }: { children: R
     if (home) {
         homeIcon =
             <li className={styles.categoryLi}>
-                        <img width="64px" height="64px" className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                <p className={styles.categoryActive}>
+                    <img className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                </p>
                 <p className={styles.navCategoryText}>
                     Home
                 </p>
@@ -23,7 +24,7 @@ export default function Layout({ children, post, home, category }: { children: R
             <li className={styles.categoryLi} >
                 <Link href="/" as="/">
                     <a className={styles.categoryAnchor}>
-                        <img width="64px" height="64px" className={styles.categoryIcon} src="/images/Home.png" alt="" />
+                        <img className={styles.categoryIcon} src="/images/Home.png" alt="" />
                     </a>
                 </Link>
                 <p className={styles.navCategoryText}>
@@ -42,7 +43,9 @@ export default function Layout({ children, post, home, category }: { children: R
                         if (categoryName === category) {
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
-                                            <img width="64px" height="64px" className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    <p className={styles.categoryActive}>
+                                        <img className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                    </p>
                                     <p className={styles.navCategoryText}>
                                         {categoryName}
                                     </p>
@@ -53,7 +56,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <Link href={`/categories/${categoryName}`}>
                                         <a className={styles.categoryAnchor}>
-                                            <img width="64px" height="64px" className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
+                                            <img className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
                                         </a>
                                     </Link>
                                     <p className={styles.navCategoryText}>
@@ -62,7 +65,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 </li>
                             );
                         }
-                        })}
+                    })}
                     </ul>
                 </div>
             </nav>;
@@ -87,14 +90,13 @@ export default function Layout({ children, post, home, category }: { children: R
             </Head>
             <header className={styles.header}>
                 <div className={styles.container}>
-                    <Link href="/" as="/">
-                        <h1 className={styles.headerLogo}>
+                    <h1 className={styles.headerLogo}>
+                        <Link href="/" as="/">
                             <a className={styles.headerAnchor}>
                                 mimlog
                             </a>
-                        </h1>
-                    </Link>
-
+                        </Link>
+                    </h1>
                 </div>
             </header>
             {categoryNav}
