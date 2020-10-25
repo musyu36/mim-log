@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!-- Created with Vectornator for iOS (http://vectornator.io/) --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="0 0 64 64">
+<metadata>
+<vectornator:setting key="DimensionsVisible" value="1"/>
+<vectornator:setting key="SnapToGrid" value="0"/>
+<vectornator:setting key="SnapToPoints" value="0"/>
+<vectornator:setting key="GuidesVisible" value="1"/>
+<vectornator:setting key="RulersVisible" value="1"/>
+<vectornator:setting key="SnapToEdges" value="0"/>
+<vectornator:setting key="DisplayWhiteBackground" value="0"/>
+<vectornator:setting key="SnapToGuides" value="1"/>
+<vectornator:setting key="GridSpacing" value="36"/>
+<vectornator:setting key="Units" value="Pixels"/>
+<vectornator:setting key="DynamicGuides" value="0"/>
+<vectornator:setting key="New" value="1"/>
+</metadata>
+<defs/>
+<g id="レイヤー 1" vectornator:layerName="レイヤー 1">
+<g opacity="1">
+<path stroke="#375d81" stroke-width="2.5" d="M36.6615+4.85128L47.2226+4.85128L47.2226+4.85128L47.2226+15.4143L47.2226+15.4143L36.6615+15.4143L36.6615+15.4143L36.6615+4.85128L36.6615+4.85128Z" fill="#f3f4f5" stroke-linecap="round" opacity="1" stroke-linejoin="round"/>
+<path stroke="#375d81" stroke-width="2.5" d="M45.6697+34.6129L27.6513+34.6129L27.6513+16.5947L33.2429+16.5947L33.2429+10.693L1.55567+10.693L1.55567+63.5035L54.367+63.5035L54.367+31.8163L45.6697+31.8163L45.6697+34.6129Z" fill="#f3f4f5" stroke-linecap="round" opacity="1" stroke-linejoin="round"/>
+<path stroke="#375d81" stroke-width="2.5" d="M31.3791+20.3233L41.9401+20.3233L41.9401+20.3233L41.9401+30.8844L41.9401+30.8844L31.3791+30.8844L31.3791+30.8844L31.3791+20.3233L31.3791+20.3233Z" fill="#f3f4f5" stroke-linecap="round" opacity="1" stroke-linejoin="round"/>
+<path stroke="#375d81" stroke-width="2.5" d="M51.8832+0.502622L62.4443+0.502622L62.4443+0.502622L62.4443+11.0656L62.4443+11.0656L51.8832+11.0656L51.8832+11.0656L51.8832+0.502622L51.8832+0.502622Z" fill="#f3f4f5" stroke-linecap="round" opacity="1" stroke-linejoin="round"/>
+<path stroke="#375d81" stroke-width="2.5" d="M46.9116+17.5892L57.4746+17.5892L57.4746+17.5892L57.4746+28.1512L57.4746+28.1512L46.9116+28.1512L46.9116+28.1512L46.9116+17.5892L46.9116+17.5892Z" fill="#f3f4f5" stroke-linecap="round" opacity="1" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
