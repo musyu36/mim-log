@@ -4,16 +4,31 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from "next/link"
 
+import HomeLogo from "../public/images/HomeLogo.svg"
+import DevLogo from "../public/images/DevelopLogo.svg"
+import DiaryLogo from "../public/images/DiaryLogo.svg"
+import OtherLogo from "../public/images/OtherLogo.svg"
+
 export const siteTitle = "mimlog"
 const categories = ["Dev", "Diary", "Other"]
 
 export default function Layout({ children, post, home, category }: { children: React.ReactNode, post?: boolean, home?: boolean, category?: string }) {
+    const getCategoryIcon = (category: string, isActive: boolean) => {
+        switch (category) {
+            case "Dev":
+                return <DevLogo className={[isActive ? `${styles.categoryIconActive}` : `${styles.categoryIcon}`]} />
+            case "Diary":
+                return <DiaryLogo className={[isActive ? `${styles.categoryIconActive}` : `${styles.categoryIcon}`]} />
+            case "Other":
+                return <OtherLogo className={[isActive ? `${styles.categoryIconActive}` : `${styles.categoryIcon}`]} />
+        }
+    }
     var homeIcon;
     if (home) {
         homeIcon =
             <li className={styles.categoryLi}>
                 <p className={styles.categoryActive}>
-                    <img className={styles.categoryIconActive} src="/images/Home.svg" alt="Home" />
+                <HomeLogo className={styles.categoryIconActive}/>
                 </p>
                 <p className={styles.navCategoryText}>
                     Home
@@ -24,7 +39,7 @@ export default function Layout({ children, post, home, category }: { children: R
             <li className={styles.categoryLi} >
                 <Link href="/" as="/" aria-label="ホームへ">
                     <a className={styles.categoryAnchor} aria-label="ホームへ">
-                        <img className={styles.categoryIcon} src="/images/Home.svg" alt="" />
+                        <HomeLogo className={styles.categoryIcon} />
                     </a>
                 </Link>
                 <p className={styles.navCategoryText}>
@@ -44,7 +59,7 @@ export default function Layout({ children, post, home, category }: { children: R
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <p className={styles.categoryActive}>
-                                        <img className={styles.categoryIconActive} src={`/images/${categoryName}.svg`} alt="" />
+                                        { getCategoryIcon(categoryName, true) }
                                     </p>
                                     <p className={styles.navCategoryText}>
                                         {categoryName}
@@ -56,7 +71,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <Link href={`/categories/${categoryName}`} aria-label={`${categoryName}へ`}>
                                         <a className={styles.categoryAnchor} aria-label={`${categoryName}へ`}>
-                                            <img className={styles.categoryIcon} src={`/images/${categoryName}.svg`} alt="" />
+                                            { getCategoryIcon(categoryName, false) }
                                         </a>
                                     </Link>
                                     <p className={styles.navCategoryText}>
