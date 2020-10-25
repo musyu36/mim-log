@@ -92,6 +92,23 @@
   transform: translateY(2px);
 }
 
+.categoryIconActive > g,
+.categoryIconActive > path {
+  fill: #375d81;
+}
+
+.categoryIcon > g,
+.categoryIcon > path {
+  fill: #f3f4f5;
+  transition: 0.6s;
+}
+
+.categoryIcon:hover > g,
+.categoryIcon:hover > path {
+  fill: #375d81;
+  transition: 0.3s;
+}
+
 .navCategoryText {
   margin: 8px auto 0;
   color: #102137;

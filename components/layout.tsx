@@ -4,10 +4,10 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from "next/link"
 
-import HomeLogo from "../public/images/Home.svg"
-import DevLogo from "../public/images/Dev.svg"
-import DiaryLogo from "../public/images/Diary.svg"
-import OtherLogo from "../public/images/Other.svg"
+import HomeLogo from "../public/images/HomeLogo.svg"
+import DevLogo from "../public/images/DevelopLogo.svg"
+import DiaryLogo from "../public/images/DiaryLogo.svg"
+import OtherLogo from "../public/images/OtherLogo.svg"
 
 export const siteTitle = "mimlog"
 const categories = ["Dev", "Diary", "Other"]
