@@ -59,6 +59,8 @@
 }
 
 .categoryIcon {
+  width: 56px;
+  height: 56px;
   padding: 8px;
   border-radius: 16px;
   box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #cacfd4;
