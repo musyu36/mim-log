@@ -13,7 +13,7 @@ export default function Layout({ children, post, home, category }: { children: R
         homeIcon =
             <li className={styles.categoryLi}>
                 <p className={styles.categoryActive}>
-                    <img className={styles.categoryIconActive} src="/images/Home.png" alt="Home" />
+                    <img className={styles.categoryIconActive} src="/images/Home.svg" alt="Home" />
                 </p>
                 <p className={styles.navCategoryText}>
                     Home
@@ -24,7 +24,7 @@ export default function Layout({ children, post, home, category }: { children: R
             <li className={styles.categoryLi} >
                 <Link href="/" as="/" aria-label="ホームへ">
                     <a className={styles.categoryAnchor} aria-label="ホームへ">
-                        <img className={styles.categoryIcon} src="/images/Home.png" alt="" />
+                        <img className={styles.categoryIcon} src="/images/Home.svg" alt="" />
                     </a>
                 </Link>
                 <p className={styles.navCategoryText}>
@@ -44,7 +44,7 @@ export default function Layout({ children, post, home, category }: { children: R
                             return (
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <p className={styles.categoryActive}>
-                                        <img className={styles.categoryIconActive} src={`/images/${categoryName}.png`} alt="" />
+                                        <img className={styles.categoryIconActive} src={`/images/${categoryName}.svg`} alt="" />
                                     </p>
                                     <p className={styles.navCategoryText}>
                                         {categoryName}
@@ -56,7 +56,7 @@ export default function Layout({ children, post, home, category }: { children: R
                                 <li className={styles.categoryLi} key={categoryName}>
                                     <Link href={`/categories/${categoryName}`} aria-label={`${categoryName}へ`}>
                                         <a className={styles.categoryAnchor} aria-label={`${categoryName}へ`}>
-                                            <img className={styles.categoryIcon} src={`/images/${categoryName}.png`} alt="" />
+                                            <img className={styles.categoryIcon} src={`/images/${categoryName}.svg`} alt="" />
                                         </a>
                                     </Link>
                                     <p className={styles.navCategoryText}>
